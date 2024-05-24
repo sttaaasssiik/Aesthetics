@@ -26,6 +26,6 @@ public class ImmediateRenderer
 
     public void SetRenderDrawColor(Color color)
     {
-        SDL.SDL_SetRenderDrawColor(Id, color.R, color.G, color.B, color.A);
+        _ = SDL.SDL_SetRenderDrawColor(Id, color.R, color.G, color.B, color.A);
     }
 }
