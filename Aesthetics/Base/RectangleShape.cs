@@ -9,7 +9,7 @@ public class RectangleShape : UIElement
 
     protected internal override void Render(ImmediateRenderer renderer)
     {
-        // todo
+        // todo yabadabadoo
         throw new NotImplementedException();
     }
 }

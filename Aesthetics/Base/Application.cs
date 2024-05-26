@@ -1,4 +1,4 @@
-﻿// todo
+﻿// todo uncomment Application
 //namespace Aesthetics;
 
 //public abstract class Application
