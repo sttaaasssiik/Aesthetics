@@ -4,17 +4,19 @@ using Cabinet;
 
 namespace Aesthetics.VisualTests.Tests;
 
-public class TestDotMatrixDisplay : Window
+public class TestDotMatrixDisplay : TestWindow
 {
     private readonly DotMatrixDisplay dotMatrixDisplay = new(new Vector2(10, 20), new Vector2(20, 20))
     {
-        Background = Color.FromRgba(20, 20, 20, 255),
-        Position = new Vector2(100, 100)
+        Background = Color.FromRgba(20, 20, 20, 255)
     };
 
     public TestDotMatrixDisplay()
     {
-        Canvas.Children.Add(dotMatrixDisplay);
+        var canvas = new Canvas();
+        Content = canvas;
+        Canvas.SetPosition(dotMatrixDisplay, new Vector2(100, 100));
+        canvas.Children.Add(dotMatrixDisplay);
         var dots = new List<(Vector2, Color)>()
         {
             (new Vector2(0, 0), Color.FromRgba(200, 0, 0, 255)),

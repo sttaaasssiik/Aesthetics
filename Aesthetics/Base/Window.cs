@@ -3,17 +3,16 @@ using SDL2;
 
 namespace Aesthetics.Base;
 
-public class Window
+public class Window : ContentElement
 {
     private nint windowImpl;
 
     private bool running = true;
 
-    public Canvas Canvas { get; } = new();
+    //public Canvas Canvas { get; } = new();
 
-    public event WindowEvent? WindowEvent;
 
-    public event RenderEvent? RenderEvent;
+    //public event RenderEvent? RenderEvent;
 
     protected DrawingContext DrawingContext { get; private set; } = null!;
 
@@ -29,7 +28,7 @@ public class Window
                         running = false;
                         break;
                     default:
-                        WindowEvent?.Invoke(e);
+                        OnUIEvent(new UIEventArgs() { SDL_Event = e });
                         break;
                 }
             }
@@ -77,12 +76,11 @@ public class Window
         while (running)
         {
             PollEvents();
-            foreach (var child in Canvas.Children)
-            {
-                child.OnRender(DrawingContext);
-            }
-            RenderEvent?.Invoke(DrawingContext);
-            SDL.SDL_RenderPresent(DrawingContext.Id);
+            DrawingContext.SetRenderDrawColor(Background);
+            DrawingContext.Clear();
+            Content?.OnRender(DrawingContext);
+            //RenderEvent?.Invoke(DrawingContext);
+            DrawingContext.Present();
         }
         CleanUp();
     }

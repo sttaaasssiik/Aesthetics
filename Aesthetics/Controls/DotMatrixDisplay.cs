@@ -10,8 +10,6 @@ public class DotMatrixDisplay : UIElement
 
     public Vector2 Size { get; private set; }
 
-    public Color Background { get; set; }
-
     public IEnumerable<(Vector2 position, Color color)> Dots { get; set; } = [];
 
     public DotMatrixDisplay(Vector2 size, Vector2 dotSize)

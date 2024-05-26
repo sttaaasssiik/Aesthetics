@@ -28,4 +28,8 @@ public class DrawingContext
     {
         _ = SDL.SDL_SetRenderDrawColor(Id, color.R, color.G, color.B, color.A);
     }
+
+    internal void Present() => SDL.SDL_RenderPresent(Id);
+
+    internal void Clear() => _ = SDL.SDL_RenderClear(Id);
 }
