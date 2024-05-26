@@ -1,5 +1,4 @@
 ﻿using Aesthetics.Rendering;
-using Cabinet;
 
 namespace Aesthetics.Base;
 
@@ -9,9 +8,8 @@ public class ContentElement : UIElement
 
     protected internal override void OnRender(DrawingContext drawingContext)
     {
-        drawingContext.SetRenderDrawColor(Color.FromRgba(0, 0, 0, 0));
+        drawingContext.SetRenderDrawColor(Background);
         Content?.OnRender(drawingContext);
-        drawingContext.Present();
     }
 
     protected internal override void OnUIEvent(UIEventArgs uIEventArgs) { }
