@@ -9,11 +9,6 @@ public class Window : ContentElement
 
     private bool running = true;
 
-    //public Canvas Canvas { get; } = new();
-
-
-    //public event RenderEvent? RenderEvent;
-
     protected DrawingContext DrawingContext { get; private set; } = null!;
 
     public void Run()
@@ -79,7 +74,6 @@ public class Window : ContentElement
             DrawingContext.SetRenderDrawColor(Background);
             DrawingContext.Clear();
             Content?.OnRender(DrawingContext);
-            //RenderEvent?.Invoke(DrawingContext);
             DrawingContext.Present();
         }
         CleanUp();
