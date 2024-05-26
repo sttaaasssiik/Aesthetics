@@ -10,8 +10,6 @@ public class DotMatrixDisplay : UIElement
 
     public Vector2 Size { get; private set; }
 
-    public Color Background { get; set; }
-
     public IEnumerable<(Vector2 position, Color color)> Dots { get; set; } = [];
 
     public DotMatrixDisplay(Vector2 size, Vector2 dotSize)
@@ -30,7 +28,7 @@ public class DotMatrixDisplay : UIElement
             {
                 var rect = new Rectangle()
                 {
-                    Position = new Vector2(x * DotSize.X + Position.X, y * DotSize.Y + Position.Y),
+                    Position = new Vector2(x * DotSize.X + LocalPosition.X, y * DotSize.Y + LocalPosition.Y),
                     Width = DotSize.X - 1,
                     Height = DotSize.Y - 1
                 };
@@ -42,7 +40,7 @@ public class DotMatrixDisplay : UIElement
         {
             var rect = new Rectangle
             {
-                Position = new Vector2(position.X * DotSize.X + Position.X, position.Y * DotSize.Y + Position.Y),
+                Position = new Vector2(position.X * DotSize.X + LocalPosition.X, position.Y * DotSize.Y + LocalPosition.Y),
                 Width = DotSize.X - 1,
                 Height = DotSize.Y - 1
             };

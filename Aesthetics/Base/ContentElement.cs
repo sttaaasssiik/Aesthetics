@@ -6,5 +6,7 @@ public class ContentElement : UIElement
 {
     public Visual? Content { get; set; }
 
-    protected internal override void OnRender(DrawingContext renderer) { }
+    protected internal override void OnRender(DrawingContext drawingContext) => Content?.OnRender(drawingContext);
+
+    protected internal override void OnUIEvent(UIEventArgs uIEventArgs) { }
 }

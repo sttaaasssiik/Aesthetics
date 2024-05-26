@@ -5,8 +5,6 @@ namespace Aesthetics.Base;
 
 public class RectangleShape : UIElement
 {
-    public Color Background { get; set; }
-
     public int Width { get; set; }
 
     public int Height { get; set; }
@@ -14,6 +12,6 @@ public class RectangleShape : UIElement
     protected internal override void OnRender(DrawingContext dc)
     {
         dc.SetRenderDrawColor(Background);
-        dc.FillRectangle(new Rectangle() { Position = Position, Width = Width, Height = Height });
+        dc.FillRectangle(new Rectangle() { Position = LocalPosition, Width = Width, Height = Height });
     }
 }

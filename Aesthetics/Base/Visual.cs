@@ -1,8 +1,13 @@
-﻿using Cabinet;
+﻿using Aesthetics.Rendering;
+using Cabinet;
 
 namespace Aesthetics.Base;
 
 public abstract class Visual
 {
-    internal Vector2 Position { get; set; }
+    public Color Background { get; set; }
+
+    internal Vector2 LocalPosition { get; set; }
+
+    protected internal abstract void OnRender(DrawingContext renderer);
 }
