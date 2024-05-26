@@ -7,9 +7,10 @@ public class RectangleShape : UIElement
 {
     public Color Background { get; set; }
 
+    public Rectangle Rectangle { get; set; }
+
     protected internal override void Render(ImmediateRenderer renderer)
     {
-        // todo yabadabadoo
-        throw new NotImplementedException();
+        renderer.FillRectangle(Rectangle);
     }
 }
