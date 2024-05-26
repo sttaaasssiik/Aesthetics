@@ -10,13 +10,15 @@ public class RectangleShapeTest : TestWindow
         var rectangleShape = new RectangleShape()
         {
             Background = Color.FromRgba(255, 0, 0, 255),
-            Rectangle = new Rectangle() { Width = 90, Height = 90 }
+            Width = 90,
+            Height = 90
         };
         var rectangleShape2 = new RectangleShape()
         {
-            Position = new Vector2(100, 100),
+            Position = new Vector2(100, 0),
             Background = Color.FromRgba(0, 255, 0, 255),
-            Rectangle = new Rectangle() { Width = 90, Height = 90 }
+            Width = 90,
+            Height = 90
         };
         Canvas.Children.Add(rectangleShape);
         Canvas.Children.Add(rectangleShape2);
