@@ -7,5 +7,5 @@ public abstract class UIElement
 {
     public Vector2 Position { get; set; }
 
-    protected internal abstract void Render(ImmediateRenderer renderer);
+    protected internal abstract void OnRender(DrawingContext renderer);
 }

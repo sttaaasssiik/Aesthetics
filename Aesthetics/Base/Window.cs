@@ -15,7 +15,7 @@ public class Window
 
     public event RenderEvent? RenderEvent;
 
-    protected ImmediateRenderer Renderer { get; private set; } = null!;
+    protected DrawingContext DrawingContext { get; private set; } = null!;
 
     public void Run()
     {
@@ -61,14 +61,14 @@ public class Window
                 Console.WriteLine($"There was an issue creating the renderer. {SDL.SDL_GetError()}");
             }
 
-            Renderer = new ImmediateRenderer(rendererId);
+            DrawingContext = new DrawingContext(rendererId);
 
-            SDL.SDL_SetRenderDrawBlendMode(Renderer.Id, SDL.SDL_BlendMode.SDL_BLENDMODE_BLEND);
+            SDL.SDL_SetRenderDrawBlendMode(DrawingContext.Id, SDL.SDL_BlendMode.SDL_BLENDMODE_BLEND);
         }
 
         void CleanUp()
         {
-            SDL.SDL_DestroyRenderer(Renderer.Id);
+            SDL.SDL_DestroyRenderer(DrawingContext.Id);
             SDL.SDL_DestroyWindow(windowImpl);
             SDL.SDL_Quit();
         }
@@ -79,10 +79,10 @@ public class Window
             PollEvents();
             foreach (var child in Canvas.Children)
             {
-                child.Render(Renderer);
+                child.OnRender(DrawingContext);
             }
-            RenderEvent?.Invoke(Renderer);
-            SDL.SDL_RenderPresent(Renderer.Id);
+            RenderEvent?.Invoke(DrawingContext);
+            SDL.SDL_RenderPresent(DrawingContext.Id);
         }
         CleanUp();
     }

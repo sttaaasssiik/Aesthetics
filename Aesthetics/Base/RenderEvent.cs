@@ -2,4 +2,4 @@
 
 namespace Aesthetics.Base;
 
-public delegate void RenderEvent(ImmediateRenderer renderer);
+public delegate void RenderEvent(DrawingContext renderer);

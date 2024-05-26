@@ -11,5 +11,5 @@ public class Canvas : UIElement
         Children = new UIElementCollection(this);
     }
 
-    protected internal override void Render(ImmediateRenderer renderer) { }
+    protected internal override void OnRender(DrawingContext renderer) { }
 }

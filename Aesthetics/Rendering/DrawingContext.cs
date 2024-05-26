@@ -3,11 +3,11 @@ using SDL2;
 
 namespace Aesthetics.Rendering;
 
-public class ImmediateRenderer
+public class DrawingContext
 {
     internal nint Id { get; }
 
-    internal ImmediateRenderer(nint id) => Id = id;
+    internal DrawingContext(nint id) => Id = id;
 
     public void FillRectangle(Rectangle rectangle)
     {

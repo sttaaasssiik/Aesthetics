@@ -20,7 +20,7 @@ public class DotMatrixDisplay : UIElement
         DotSize = dotSize;
     }
 
-    protected internal override void Render(ImmediateRenderer renderer)
+    protected internal override void OnRender(DrawingContext renderer)
     {
         renderer.SetRenderDrawColor(Background);
 

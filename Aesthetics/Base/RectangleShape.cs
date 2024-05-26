@@ -11,9 +11,9 @@ public class RectangleShape : UIElement
 
     public int Height { get; set; }
 
-    protected internal override void Render(ImmediateRenderer renderer)
+    protected internal override void OnRender(DrawingContext dc)
     {
-        renderer.SetRenderDrawColor(Background);
-        renderer.FillRectangle(new Rectangle() { Position = Position, Width = Width, Height = Height });
+        dc.SetRenderDrawColor(Background);
+        dc.FillRectangle(new Rectangle() { Position = Position, Width = Width, Height = Height });
     }
 }
