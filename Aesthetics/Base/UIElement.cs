@@ -1,11 +1,8 @@
 ﻿using Aesthetics.Rendering;
-using Cabinet;
 
 namespace Aesthetics.Base;
 
-public abstract class UIElement
+public abstract class UIElement : Visual
 {
-    public Vector2 Position { get; set; }
-
     protected internal abstract void OnRender(DrawingContext renderer);
 }
