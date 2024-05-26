@@ -62,10 +62,14 @@ public class Window : ContentElement
             }
         }
 
+        var renderer = new Renderer(DrawingContext);
         while (running)
         {
             PollEvents();
-            Content?.OnRender(DrawingContext);
+            if (Content is not null)
+            {
+                renderer.Render(Content);
+            }
         }
 
         SDL.SDL_DestroyRenderer(DrawingContext.Id);
