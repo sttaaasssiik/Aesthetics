@@ -11,6 +11,7 @@ public class RectangleShape : UIElement
 
     protected internal override void Render(ImmediateRenderer renderer)
     {
+        renderer.SetRenderDrawColor(Background);
         renderer.FillRectangle(Rectangle);
     }
 }

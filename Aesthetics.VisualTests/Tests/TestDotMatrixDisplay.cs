@@ -2,7 +2,7 @@
 using Aesthetics.Controls;
 using Cabinet;
 
-namespace Aesthetics.VisualTests;
+namespace Aesthetics.VisualTests.Tests;
 
 public class TestDotMatrixDisplay : Window
 {
