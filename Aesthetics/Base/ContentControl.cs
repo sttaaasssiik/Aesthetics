@@ -4,11 +4,10 @@ namespace Aesthetics.Base;
 
 public class ContentControl : Control
 {
-    public Visual? Content { get; set; }
+    public Control? Content { get; set; }
 
     protected internal override void OnRender(DrawingContext drawingContext)
     {
-        drawingContext.SetRenderDrawColor(Background);
         Content?.OnRender(drawingContext);
     }
 

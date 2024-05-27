@@ -5,6 +5,8 @@ namespace Aesthetics.Base;
 
 public class RectangleShape : Control
 {
+    public Color Background { get; set; }
+
     public int Width { get; set; }
 
     public int Height { get; set; }

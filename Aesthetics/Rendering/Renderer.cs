@@ -12,7 +12,7 @@ internal class Renderer
         this.drawingContext = drawingContext;
     }
 
-    public void Render(Visual visual)
+    public void Render(Control visual)
     {
         drawingContext.SetRenderDrawColor(Color.FromRgba(0, 0, 0, 0));
         drawingContext.Clear();

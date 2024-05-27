@@ -1,6 +1,14 @@
-﻿namespace Aesthetics.Base;
+﻿using Aesthetics.Rendering;
+using Cabinet;
 
-public abstract class Control : Visual
+namespace Aesthetics.Base;
+
+public abstract class Control
 {
+    internal Vector2 LocalPosition { get; set; }
+
+    protected internal abstract void OnRender(DrawingContext renderer);
+
+
     protected internal virtual void OnUIEvent(UIEventArgs uIEventArgs) { }
 }
