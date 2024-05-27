@@ -3,7 +3,7 @@ using Cabinet;
 
 namespace Aesthetics.Base;
 
-public class RectangleShape : UIElement
+public class RectangleShape : Control
 {
     public int Width { get; set; }
 

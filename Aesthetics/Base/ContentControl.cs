@@ -2,7 +2,7 @@
 
 namespace Aesthetics.Base;
 
-public class ContentElement : UIElement
+public class ContentControl : Control
 {
     public Visual? Content { get; set; }
 

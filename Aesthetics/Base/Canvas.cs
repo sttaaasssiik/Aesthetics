@@ -3,7 +3,7 @@ using Cabinet;
 
 namespace Aesthetics.Base;
 
-public class Canvas : UIElement
+public class Canvas : Control
 {
     public UIElementCollection Children { get; }
 

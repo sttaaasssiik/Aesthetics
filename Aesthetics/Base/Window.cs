@@ -3,7 +3,7 @@ using SDL2;
 
 namespace Aesthetics.Base;
 
-public class Window : ContentElement
+public class Window : ContentControl
 {
     private nint windowImpl;
 

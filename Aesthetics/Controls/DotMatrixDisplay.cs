@@ -4,7 +4,7 @@ using Cabinet;
 
 namespace Aesthetics.Controls;
 
-public class DotMatrixDisplay : UIElement
+public class DotMatrixDisplay : Control
 {
     public Vector2 DotSize { get; private set; }
 
